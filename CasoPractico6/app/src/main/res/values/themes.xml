@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.CasoPractico5" parent="Base.Theme.CasoPractico5" />
+
+    <style name="Theme.APP.Starting" parent="Base.Theme.CasoPractico5" >
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/spain</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.CasoPractico5</item>
+         </style>
+
 </resources>

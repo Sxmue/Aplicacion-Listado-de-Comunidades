@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.casopractico5.entities.Comunity
 import com.example.casopractico5.databinding.ActivityMainBinding
@@ -47,6 +49,7 @@ class MainActivity : AppCompatActivity() {
      * OnCreate de la actividad principal, aqui va el codigo relacionado con la main activity
      */
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
         //----------EN ESTA VERSION USAREMOS BASES DE DATOS PARA EL USO DE LA APLICACION----------
@@ -57,7 +60,17 @@ class MainActivity : AppCompatActivity() {
         //Inicialización de la lista principal
         comunityList = miDAO.cargarLista(this)
 
+        //Este trozo es solamente para que cuando pulses para atras no vayas al login, sino que tengas que hacer logout
+        this.onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                finish()
+            }
 
+        })
+
+        //Manejos varios de la splash screen
+        Thread.sleep(2000)
+        splashScreen.setKeepOnScreenCondition{false}
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -150,6 +163,11 @@ class MainActivity : AppCompatActivity() {
                 //Enseñamos la alerta por pantalla con este metodo
                 alert.show()
 
+                true
+            }
+            R.id.Logout -> {
+                val intent = Intent(this,Login::class.java)
+                startActivity(intent)
                 true
             }
 

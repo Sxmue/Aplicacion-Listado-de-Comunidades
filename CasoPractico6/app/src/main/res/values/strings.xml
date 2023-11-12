@@ -8,4 +8,10 @@
     <string name="recargar">Recargar</string>
     <string name="limpiar">Limpiar</string>
     <string name="recargar_por_defecto">Recargar por defecto</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="comunidades">COMUNIDADES</string>
+    <string name="recordar">Recordar</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
 </resources>
