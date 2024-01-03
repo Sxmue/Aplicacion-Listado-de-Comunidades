@@ -31,6 +31,23 @@ class ComunityContract {
 
         }
 
+        class Usuarios : BaseColumns {
+
+            companion object {
+
+                const val NOMBRE_TABLA = "usuarios"
+
+                const val COLUMNA_ID = "id"
+
+                const val COLUMNA_EMAIL = "email"
+
+                const val COLUMNA_PASSWORD = "password"
+
+
+            }
+
+        }
+
         class Backup : BaseColumns {
 
             companion object {

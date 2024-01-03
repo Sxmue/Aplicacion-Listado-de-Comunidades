@@ -14,15 +14,21 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.casopractico5.databinding.ActivityLoginBinding
 import com.example.casopractico5.databinding.ActivityMainBinding
+import com.example.casopractico5.entities.ComunityDAO
 
 class Login : AppCompatActivity() {
 
     //Variable en la que vamos a almacenar el shared preferences
     private lateinit var prefs: SharedPreferences
     private lateinit var binding: ActivityLoginBinding
+
+    lateinit var miDAO:ComunityDAO
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val splashScreen = installSplashScreen()
+
+        miDAO = ComunityDAO()
 
         //cargamos este layout en el binding
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -38,14 +44,52 @@ class Login : AppCompatActivity() {
         //Llamamos al metodo que setea el email y la pass por defecto si estan en el shared preferences
         setValues()
 
+
+        //Vamos a hacer que si el usuario esta dado de alta ingrese automaticamente
+
+        val email = prefs.getString("email", "")
+        val remember = prefs.getBoolean("recordar", false)
+        val vieneDeDentro = prefs.getBoolean("deDentro", false)
+        if(remember && !vieneDeDentro){
+            var user = mutableListOf<String>()
+            val editor = prefs!!.edit()
+
+            user=miDAO.getUser(this, email!!)
+
+            if(user.isNotEmpty()) {
+                toMainActivity()
+                editor.putBoolean("deDentro",false)
+                Toast.makeText(
+                    this,
+                    "Logueado correctamente",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+
+
+
         //Listener al boton de Login
         binding.btnLogin.setOnClickListener {
             //Sacamos lo que haya escrito a dos variables
             val email = binding.txtName.text.toString()
             val pass = binding.txtPassword.text.toString()
+
+
             //Pasamos el metodo login, si es correcto cambiamos de activity
+
+
             if (login(email, pass)) {
                 savePreferences(email, pass)
+
+                var user = mutableListOf<String>()
+
+                //Si no existe en la base de datos, lo guardo
+                user=miDAO.getUser(this, email!!)
+                if(binding.chkRecordar.isChecked && user.isEmpty()) {
+                    miDAO.addUser(this, email, pass)
+                }
                 toMainActivity()
                 Toast.makeText(
                     this,
@@ -127,7 +171,7 @@ class Login : AppCompatActivity() {
         val editor = prefs!!.edit()
 
         //Si el switch esta pulsado
-        if (binding.btnSwitch.isChecked) {
+        if (binding.chkRecordar.isChecked) {
             //Añadimos los datos y aplicamos
             editor.putString("email", email)
             editor.putString("pass", pass)
@@ -169,7 +213,7 @@ class Login : AppCompatActivity() {
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)) {
             binding.txtName.text = Editable.Factory.getInstance().newEditable(email)
             binding.txtPassword.text = Editable.Factory.getInstance().newEditable(pass)
-            binding.btnSwitch.isChecked = remember
+            binding.chkRecordar.isChecked = remember
         }
     }
 

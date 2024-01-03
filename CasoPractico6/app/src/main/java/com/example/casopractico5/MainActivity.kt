@@ -56,6 +56,12 @@ class MainActivity : AppCompatActivity() {
         //Inicializacion del dao que usaremos para interactuar con la base de datos
         miDAO=ComunityDAO()
 
+        //Pone el deDentro a false por si cerramos la aplicacion de golpe
+        var prefs = getSharedPreferences("Preferences", MODE_PRIVATE)
+        val editor = prefs!!.edit()
+        editor.putBoolean("deDentro",false)
+        editor.apply()
+
         //Inicialización de la lista principal
         comunityList = miDAO.cargarLista(this)
 
@@ -161,6 +167,10 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.Logout -> {
+                var prefs = getSharedPreferences("Preferences", MODE_PRIVATE)
+                val editor = prefs!!.edit()
+                editor.putBoolean("deDentro",true)
+                editor.apply()
                 val intent = Intent(this,Login::class.java)
                 startActivity(intent)
                 true

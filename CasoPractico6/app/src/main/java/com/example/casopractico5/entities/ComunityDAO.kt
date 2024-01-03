@@ -111,6 +111,45 @@ class ComunityDAO {
         }
 
     /**
+     * Metodo que añade un usuario a la base de datos
+     */
+    fun addUser(context: Context?,email:String,password:String){
+        val db = DBOpenHelper.getInstance(context)!!.writableDatabase
+        db.execSQL("INSERT INTO usuarios ( " +
+                "${ComunityContract.Companion.Usuarios.COLUMNA_EMAIL}, " +
+                "${ComunityContract.Companion.Usuarios.COLUMNA_PASSWORD} ) VALUES ( '$email', '$password' );")
+    }
+
+    /**
+     * Metodo para obtener un Usuario de la base de datos
+     */
+    fun getUser(context: Context?,userEmail:String): MutableList<String> {
+        lateinit var result:MutableList<String>
+        lateinit var c : Cursor
+        try {
+            val db = DBOpenHelper.getInstance(context)!!.readableDatabase
+
+            val sql = "SELECT * FROM usuarios WHERE email='$userEmail'"
+
+            c = db.rawQuery(sql, null)
+
+
+            result = mutableListOf()
+
+            while (c.moveToNext()) {
+                result.add(c.getString(1))
+                result.add(c.getString(2))
+            }
+        }finally {
+
+                c?.close()
+
+        }
+
+        return result
+    }
+
+    /**
      * Metodo para pasarle la tabla vacia a la base de datos
      */
     fun loadEmpty(context: Context?):MutableList<Comunity>{

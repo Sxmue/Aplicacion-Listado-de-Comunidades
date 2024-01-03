@@ -34,6 +34,10 @@ class DBOpenHelper private constructor(context: Context?) : SQLiteOpenHelper(con
 
             inicializarBBDD(sqLiteDatabase,ComunityContract.Companion.Backup.NOMBRE_TABLA)
 
+            sqLiteDatabase.execSQL("CREATE TABLE ${ComunityContract.Companion.Usuarios.NOMBRE_TABLA} "
+                    + "( ${ComunityContract.Companion.Usuarios.COLUMNA_ID} INTEGER PRIMARY KEY"
+                    + " , ${ComunityContract.Companion.Usuarios.COLUMNA_EMAIL} NVARCHAR(200) NOT NULL"
+                    + " , ${ComunityContract.Companion.Usuarios.COLUMNA_PASSWORD} NVARCHAR(200) NOT NULL );")
 
 
         } catch (e: Exception) {
