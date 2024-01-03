@@ -8,7 +8,9 @@ import android.text.Editable
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
+import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.casopractico5.databinding.ActivityLoginBinding
 import com.example.casopractico5.databinding.ActivityMainBinding
@@ -20,9 +22,15 @@ class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val splashScreen = installSplashScreen()
+
         //cargamos este layout en el binding
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Manejos varios de la splash screen
+        Thread.sleep(2000)
+        splashScreen.setKeepOnScreenCondition{false}
 
         //De esta manera creamos y inicializamos el shared preferences
         prefs = getSharedPreferences("Preferences", MODE_PRIVATE)
@@ -46,6 +54,46 @@ class Login : AppCompatActivity() {
                 ).show()
             }
         }
+
+
+
+        //-----MOTION LAYOUT-----
+
+        //Codigo del Motion Layout para que el logo de vueltas al entrar
+        //Con el binding seleccionamos el motion layout y le ponemos un transition listener
+        //Esto automaticamente te obligara a implementar las funciones que hay abajo
+        binding.motionLayout.setTransitionListener( object: MotionLayout.TransitionListener {
+            override fun onTransitionStarted(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int
+            ) {
+            }
+
+            override fun onTransitionChange(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int,
+                progress: Float
+            ) {
+
+            }
+
+            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+                //El unico codigo que hemos añadido es este,el resto es automatico
+               binding.motionLayout.visibility = View.GONE
+            }
+
+            override fun onTransitionTrigger(
+                motionLayout: MotionLayout?,
+                triggerId: Int,
+                positive: Boolean,
+                progress: Float
+            ) {
+
+            }
+        })
+
 
     }
 

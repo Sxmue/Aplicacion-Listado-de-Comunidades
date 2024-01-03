@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
      * OnCreate de la actividad principal, aqui va el codigo relacionado con la main activity
      */
     override fun onCreate(savedInstanceState: Bundle?) {
-        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
         //----------EN ESTA VERSION USAREMOS BASES DE DATOS PARA EL USO DE LA APLICACION----------
@@ -67,10 +66,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
-        //Manejos varios de la splash screen
-        Thread.sleep(2000)
-        splashScreen.setKeepOnScreenCondition{false}
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -259,7 +254,7 @@ class MainActivity : AppCompatActivity() {
 
                             //MUY IMPORTANTE, a la hora de eliminar, trata de hacerlo con un campo que tenga el objeto,
                             //Si el objeto no tiene un id NO intentes hacerlo con el itemId porque da error
-                            //Eliminamos la comunidad pulsada a traves del id del item
+                            //Eliminamos la comunidad pulsada a traves del nombre del item
                             miDAO.deleteComunidad(this,comunityAfected.name)
 
                             //Recargamos la lista de la base de datos
