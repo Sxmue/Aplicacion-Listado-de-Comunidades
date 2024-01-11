@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/activity_open_steet_map.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/activity_open_steet_map.xml"
+    },
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/item_comunity.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/item_comunity.xml"
+    },
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/activity_maps.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/activity_maps.xml"
+    },
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/activity_edit_comunity.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/activity_edit_comunity.xml"
+    },
+    {
+        "merged": "com.example.casopractico5.app-mergeDebugResources-35:/layout/activity_login.xml",
+        "source": "com.example.casopractico5.app-main-38:/layout/activity_login.xml"
+    }
+]

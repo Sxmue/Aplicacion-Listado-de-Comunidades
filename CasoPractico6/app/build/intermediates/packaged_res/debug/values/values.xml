@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="gris">#e2e2e2</color>
+    <color name="naranja">#fa9600</color>
+    <color name="purple">#9900ff</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Caso.Practico.5</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="comunidad">Comunidad</string>
+    <string name="comunidades">COMUNIDADES</string>
+    <string name="e_mail">E-mail</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="password">Password</string>
+    <string name="recargar">Recargar</string>
+    <string name="recargar_por_defecto">Recargar por defecto</string>
+    <string name="recordar">Recordar</string>
+    <string name="recordar_usuario">Recordar usuario</string>
+    <string name="textview">TextView</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="txtbanderanuevo">txtbanderanuevo</string>
+    <style name="Base.Theme.CasoPractico5" parent="Theme.Material3.DayNight">
+        
+        
+    </style>
+    <style name="Theme.APP.Starting" parent="Base.Theme.CasoPractico5">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/spain</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.CasoPractico5</item>
+         </style>
+</resources>
