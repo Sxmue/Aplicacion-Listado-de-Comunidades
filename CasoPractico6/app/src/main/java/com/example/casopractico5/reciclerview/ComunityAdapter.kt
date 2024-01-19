@@ -2,7 +2,9 @@ package com.example.casopractico5.reciclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.casopractico5.ComunityDiffUtil
 import com.example.casopractico5.entities.Comunity
 import com.example.casopractico5.R
 
@@ -10,9 +12,27 @@ import com.example.casopractico5.R
  * Esta clase se va a encargar de implementar los 3 metodos que necesitamos para el reciclerview
  * Recibe la lista de objetos que queramos mostrar y implemente esta interfaz recyclerview
  */
-class ComunityAdapter(private val comunities:List<Comunity>,
+class ComunityAdapter(private var comunities:List<Comunity>,
     //Recibe un OnClickListener con una lambda para que cada vez que cliques en una comunidad haga lo que sea
                       private val onClickListener:(Comunity)->Unit): RecyclerView.Adapter<ComunityViewHolder>() {
+
+    /**
+     * Con esta funcion y la libreria DiffUtils hacemos que los cambios en la lista del recyclerView se
+     * notifiquen automaticamente
+     * Para ello hemos tenido que hacer variable y no constante la lista que recibe justo arriba el adapter
+     */
+    fun updateList(newList:List<Comunity>){
+        //Creamos un objeto de la clase ComunityDiff que acabamos de crear
+        val comunityDiff=ComunityDiffUtil(comunities,newList)
+        //llamamos al metodo calculate de la libreria para calcular las diferencias y las metemos en result
+        val result = DiffUtil.calculateDiff(comunityDiff)
+        //Asignamos a la lista antigua, la lista nueva
+        comunities=newList
+        //Con este metodo arregla las irregularidades
+        result.dispatchUpdatesTo(this)
+        //De este modo ya no tenemos que llamar al notify del adapter en la Main Activity
+    }
+
 
 
     /**

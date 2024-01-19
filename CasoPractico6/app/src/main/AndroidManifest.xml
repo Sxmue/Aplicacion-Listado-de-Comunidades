@@ -18,7 +18,7 @@
         android:theme="@style/Base.Theme.CasoPractico5"
         tools:targetApi="31">
         <activity
-            android:name=".OpenSteetMapActivity"
+            android:name=".maps.OpenSteetMapActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -36,7 +36,7 @@
             android:value="" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".maps.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity

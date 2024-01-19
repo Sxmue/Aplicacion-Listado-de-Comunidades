@@ -72,8 +72,8 @@ class Login : AppCompatActivity() {
         //Listener al boton de Login
         binding.btnLogin.setOnClickListener {
             //Sacamos lo que haya escrito a dos variables
-            val email = binding.txtName.text.toString()
-            val pass = binding.txtPassword.text.toString()
+            val email = binding.txtName.editText?.text.toString()
+            val pass = binding.txtPassword.editText?.text.toString()
 
 
             //Pasamos el metodo login, si es correcto cambiamos de activity
@@ -210,8 +210,8 @@ class Login : AppCompatActivity() {
         val pass = prefs.getString("pass", "")
         val remember = prefs.getBoolean("recordar", false)
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)) {
-            binding.txtName.text = Editable.Factory.getInstance().newEditable(email)
-            binding.txtPassword.text = Editable.Factory.getInstance().newEditable(pass)
+            binding.txtName.editText?.text = Editable.Factory.getInstance().newEditable(email)
+            binding.txtPassword.editText?.text = Editable.Factory.getInstance().newEditable(pass)
             binding.chkRecordar.isChecked = remember
         }
     }

@@ -1,4 +1,4 @@
-package com.example.casopractico5
+package com.example.casopractico5.maps
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

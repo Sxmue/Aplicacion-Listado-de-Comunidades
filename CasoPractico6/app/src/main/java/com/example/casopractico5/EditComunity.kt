@@ -16,7 +16,7 @@ class EditComunity : AppCompatActivity() {
         setContentView(R.layout.activity_edit_comunity)
 
         //Sacamos el cajetin para introducir el nuevo texto
-        val editname = findViewById<EditText>(R.id.txtbanderanuevo)
+        val editname = findViewById<EditText>(R.id.editTextBanderaNuevo)
 
         //Sacamos la img para trabajar con ella
         val imgedit = findViewById<ImageView>(R.id.imgedit)

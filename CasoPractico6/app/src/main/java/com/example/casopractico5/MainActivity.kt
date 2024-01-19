@@ -11,11 +11,12 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.casopractico5.entities.Comunity
 import com.example.casopractico5.databinding.ActivityMainBinding
 import com.example.casopractico5.entities.ComunityDAO
+import com.example.casopractico5.maps.MapsActivity
+import com.example.casopractico5.maps.OpenSteetMapActivity
 import com.example.casopractico5.reciclerview.ComunityAdapter
 import com.google.android.material.snackbar.Snackbar
 
@@ -23,17 +24,15 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var miDAO:ComunityDAO
 
-   lateinit var listaDB:MutableList<Comunity>
-
 
     /*El binding para hacer referencia a vistas de la main activiti*/
     private lateinit var binding: ActivityMainBinding
 
     /*Mutable list vacia que nos declaramos para trabajar con ella aqui*/
-    private lateinit var emptyList: MutableList<Comunity>
+    private lateinit var emptyList: List<Comunity>
 
     /*Mutable list en la que vamos a guardar los cambios de uso en el momento*/
-    private lateinit var comunityList:MutableList<Comunity>
+    private lateinit var comunityList:List<Comunity>
 
     //Inicializamos el inicio de nuestro intent
     private lateinit var intentLaunch: ActivityResultLauncher<Intent>
@@ -106,9 +105,10 @@ class MainActivity : AppCompatActivity() {
                 //Recargamos la lista de la base de datos
                 comunityList = miDAO.cargarLista(this)
 
+                //Desde que hemos añadido DiffUtils, esto ya no es necesario
+               //--------- PREGUNTAR AL PROFE ---------
                 //indicamos al adaptador que se ha modificado el objeto para que muestre el cambio
                 binding.RVComunities.adapter!!.notifyItemChanged(index)
-
 
             }
         }
@@ -222,11 +222,13 @@ class MainActivity : AppCompatActivity() {
             onItemSelected(comunity)
         }
 
-        //Indicamos al adaptador que la lista ha cambiado
+        //Esto era necesario antes, pero al haber añadido DiffUtil ya no hace falta
+
+        /*Indicamos al adaptador que la lista ha cambiado
         binding.RVComunities.adapter!!.notifyItemRangeChanged(
             0,
             comunityList.size
-        )
+        )*/
 
     }
 
@@ -276,6 +278,9 @@ class MainActivity : AppCompatActivity() {
                                 onItemSelected(comunity)
                             }
 
+                            //Esto era antes de añadir la libreria DiffUtil, ya no hace falta notificar al adapter
+
+                            /*
                             //indicamos al adaptador que se ha eliminado el objeto, para que no lo muestre
                             binding.RVComunities.adapter!!.notifyItemRemoved(item.groupId)
                             //Indicamos al adaptador que la lista tiene un objeto menos
@@ -283,6 +288,8 @@ class MainActivity : AppCompatActivity() {
                                 item.groupId,
                                 comunityList.size
                             )
+                            */
+
 
                             //Despues de la llave llamamos al metodo create para que se cree la alerta
                         }.create()
