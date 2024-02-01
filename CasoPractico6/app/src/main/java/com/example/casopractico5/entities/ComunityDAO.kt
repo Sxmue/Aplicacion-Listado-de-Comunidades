@@ -21,7 +21,7 @@ class ComunityDAO {
                 result = mutableListOf()
 
                 while (c.moveToNext()) {
-                    val nueva = Comunity(c.getInt(1), c.getString(2))
+                    val nueva = Comunity(c.getInt(1), c.getString(2),c.getString(3))
                     result.add(nueva)
 
                 }
@@ -49,7 +49,7 @@ class ComunityDAO {
             result = mutableListOf()
 
             while (c.moveToNext()) {
-                val nueva = Comunity(c.getInt(1), c.getString(2))
+                val nueva = Comunity(c.getInt(1), c.getString(2),c.getString(3))
                 result.add(nueva)
 
             }
@@ -67,7 +67,7 @@ class ComunityDAO {
     fun actualizarComunidad(context: Context?, c: Comunity,index:Int) {
         val db = DBOpenHelper.getInstance(context)!!.writableDatabase
         db.execSQL("UPDATE comunities " +
-                "SET name='${c.name}', flag=${c.flag} " +
+                "SET name='${c.name}', flag=${c.flag}, uri='${c.uri}' " +
                 "WHERE id=$index;")
     }
 
@@ -106,7 +106,8 @@ class ComunityDAO {
             val db = DBOpenHelper.getInstance(context)!!.writableDatabase
             db.execSQL("INSERT INTO comunities ( " +
                     "${ComunityContract.Companion.Entrada.COLUMNA_FLAG}, " +
-                    "${ComunityContract.Companion.Entrada.COLUMNA_NAME} ) VALUES ( ${com.flag} , '${com.name}' );")
+                    "${ComunityContract.Companion.Entrada.COLUMNA_URI}, " +
+                    "${ComunityContract.Companion.Entrada.COLUMNA_NAME} ) VALUES ( ${com.flag} ,${com.uri} , '${com.name}' );")
 
         }
 
@@ -174,7 +175,7 @@ class ComunityDAO {
 
 
             while (c.moveToNext()) {
-               fin = Comunity(c.getInt(1), c.getString(2))
+               fin = Comunity(c.getInt(1), c.getString(2),c.getString(3))
             }
         }finally {
 

@@ -21,6 +21,7 @@ import com.example.casopractico5.entities.ComunityDAO
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class FotoActivity : AppCompatActivity() {
 
@@ -43,6 +44,7 @@ class FotoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         nombreComunidad = intent.extras!!.getString("nombre").toString()
+        id = intent.extras!!.getInt("id")
 
         //Vamos a pedirle los permisos al ususario para poder acceder a la camara
         // Solicitud de los permisos de la cámara
@@ -53,6 +55,13 @@ class FotoActivity : AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS
             )
         }
+
+        // Se establece el listener para la captura de foto
+        binding.btnFoto.setOnClickListener {
+            //llamamos al metodo de capturar una foto
+            takePhoto()
+        }
+        cameraExecutor = Executors.newSingleThreadExecutor()
 
 
     }
@@ -124,9 +133,10 @@ class FotoActivity : AppCompatActivity() {
 
                     //Nos instanciamos el DAO
                     val miDAO = ComunityDAO()
-                    val frutaElegida = miDAO.getComunityByName(applicationContext,name)
-                    frutaElegida.uri = output.savedUri.toString()
-                    miDAO.actualizarBBDD(applicationContext, frutaElegida)
+                    val comunidadElegida = miDAO.getComunityByName(applicationContext,nombreComunidad)
+                    comunidadElegida.uri = output.savedUri.toString()
+
+                    miDAO.actualizarComunidad(applicationContext, comunidadElegida,id)
 
                 }
             }

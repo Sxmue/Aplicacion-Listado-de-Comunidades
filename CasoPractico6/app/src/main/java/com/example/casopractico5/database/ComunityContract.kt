@@ -20,6 +20,8 @@ class ComunityContract {
 
                 const val COLUMNA_ID = "id"
 
+                const val COLUMNA_URI = "uri"
+
                 const val COLUMNA_FLAG = "flag"
 
                 const val COLUMNA_NAME = "name"
@@ -55,6 +57,8 @@ class ComunityContract {
                 const val NOMBRE_TABLA = "backupComunities"
 
                 const val COLUMNA_ID = "id"
+
+                const val COLUMNA_URI = "uri"
 
                 const val COLUMNA_FLAG = "flag"
 

@@ -9,19 +9,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30576345-b3da-461d-bb3e-b6b8dd24036f" name="Changes" comment="Material Design first Touch">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_foto.xml" afterDir="false" />
+    <list default="true" id="30576345-b3da-461d-bb3e-b6b8dd24036f" name="Changes" comment="Practica añadir camara commit de seguridad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/EditComunity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/EditComunity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/ComunityContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/ComunityContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/Comunity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/Comunity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/reciclerview/ComunityViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/reciclerview/ComunityViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityProvider.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ScreenRecorder.SavePath": "C:\\Users\\samu_\\Desktop",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/samu_/Downloads/EjemploRVCV23_v7/EjemploRVCV23_v7",
+    "last_opened_file_path": "C:/Users/samu_/Desktop",
     "project.structure.last.edited": "Dependencies",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -259,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705697273348</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Practica añadir camara commit de seguridad">
+      <created>1706818345012</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706818345012</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -268,6 +271,33 @@
     <MESSAGE value="Motion Splash Screen en proceso, commit de seguridad" />
     <MESSAGE value="Android caso práctico 8 terminado" />
     <MESSAGE value="Material Design first Touch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Material Design first Touch" />
+    <MESSAGE value="Practica añadir camara commit de seguridad" />
+    <option name="LAST_COMMIT_MESSAGE" value="Practica añadir camara commit de seguridad" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt</url>
+          <line>24</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt</url>
+          <line>138</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
