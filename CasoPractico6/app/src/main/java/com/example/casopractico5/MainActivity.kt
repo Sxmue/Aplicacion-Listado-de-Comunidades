@@ -333,6 +333,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
+            //Aqui realizamos las acciones relacionadas con la camara
+            4 ->{
+                //Iniciamos la actividad de la camara
+                val intent = Intent(this, FotoActivity::class.java)
+                intent.putExtra("nombre", comunityAfected.name)
+                startActivity(intent)
+
+            }
 
         }
 

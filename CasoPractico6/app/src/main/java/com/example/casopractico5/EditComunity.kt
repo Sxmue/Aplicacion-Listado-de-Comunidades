@@ -2,11 +2,15 @@ package com.example.casopractico5
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import com.google.android.material.textfield.TextInputLayout
 
 
 class EditComunity : AppCompatActivity() {
@@ -21,6 +25,9 @@ class EditComunity : AppCompatActivity() {
         //Sacamos la img para trabajar con ella
         val imgedit = findViewById<ImageView>(R.id.imgedit)
 
+        //Sacamos el recuadro
+        val edit =  findViewById<TextInputLayout>(R.id.txtbanderanuevo)
+
         //Del intent recibimos la imagen
         val img = intent.getIntExtra("img", 0)
 
@@ -28,6 +35,15 @@ class EditComunity : AppCompatActivity() {
         val comunityname = intent.getStringExtra("comunityname")
         //Lo usamos en editText como hint
         editname.hint = comunityname
+
+        //Vamos a ponerle un helper text al recuadro
+        edit.helperText = "C.Autónoma"
+
+        //De esta manera sacamos el color de drawable
+        val colorAzul = ContextCompat.getColor(this, R.color.azul)
+
+        //Le cambiamos el color
+        edit.setHelperTextColor(ColorStateList.valueOf(colorAzul))
 
         //Se la ponemos a la imagen de la vista actual
         imgedit.setImageResource(img)

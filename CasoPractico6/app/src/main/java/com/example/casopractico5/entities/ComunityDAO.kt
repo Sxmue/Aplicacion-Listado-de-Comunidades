@@ -159,6 +159,34 @@ class ComunityDAO {
     }
 
 
+    /**
+     * Te trae una comunidad por el nombre
+     */
+    fun getComunityByName(context: Context?,name:String): Comunity {
+        lateinit var c : Cursor
+        lateinit var fin: Comunity
+        try {
+            val db = DBOpenHelper.getInstance(context)!!.readableDatabase
+
+            val sql = "SELECT * FROM comunities WHERE name='$name'"
+
+            c = db.rawQuery(sql, null)
+
+
+            while (c.moveToNext()) {
+               fin = Comunity(c.getInt(1), c.getString(2))
+            }
+        }finally {
+
+            c.close()
+
+        }
+
+        return fin
+
+    }
+
+
     }
 
 

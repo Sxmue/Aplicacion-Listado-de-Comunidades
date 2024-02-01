@@ -68,6 +68,8 @@ class ComunityViewHolder(view: View) : ViewHolder(view), View.OnCreateContextMen
         menu.add(this.adapterPosition,2,2,"Ver en Google Maps")
         //añadimos la opcion de ver en OpenStreetMaps
         menu.add(this.adapterPosition,3,3,"Ver en Open Steet Maps")
+        //Añadimos el boton para hacer una foto
+        menu.add(this.adapterPosition,4,4,"Hacer Foto")
     }
 
 
