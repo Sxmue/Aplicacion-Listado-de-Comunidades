@@ -58,6 +58,7 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation("io.coil-kt:coil:2.5.0")
     implementation ("org.osmdroid:osmdroid-android:6.1.18")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("com.google.android.material:material:1.11.0")

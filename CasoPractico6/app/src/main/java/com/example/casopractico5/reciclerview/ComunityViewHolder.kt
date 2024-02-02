@@ -70,6 +70,8 @@ class ComunityViewHolder(view: View) : ViewHolder(view), View.OnCreateContextMen
         menu.add(this.adapterPosition,3,3,"Ver en Open Steet Maps")
         //Añadimos el boton para hacer una foto
         menu.add(this.adapterPosition,4,4,"Hacer Foto")
+        //Añadimos el boton para ver la foto guardada
+        menu.add(this.adapterPosition,5,5,"Ver Foto")
     }
 
 

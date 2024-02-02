@@ -343,6 +343,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
+            5 ->{
+                //Iniciamos la actividad de ver la foto guardada
+                val intent = Intent(this, ImageVisualizer::class.java)
+                intent.putExtra("nombre", comunityAfected.name)
+                startActivity(intent)
+
+            }
 
         }
 

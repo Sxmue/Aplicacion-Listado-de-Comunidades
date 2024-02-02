@@ -9,15 +9,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30576345-b3da-461d-bb3e-b6b8dd24036f" name="Changes" comment="Practica añadir camara commit de seguridad">
+    <list default="true" id="30576345-b3da-461d-bb3e-b6b8dd24036f" name="Changes" comment="Falta visualizar la foto seleccionada">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/ImageVisualizer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/nophoto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_visualizer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/ComunityContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/ComunityContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/Comunity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/Comunity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/entities/ComunityProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/reciclerview/ComunityViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/reciclerview/ComunityViewHolder.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,22 +96,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ScreenRecorder.SavePath": "C:\\Users\\samu_\\Desktop",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/samu_/Desktop",
-    "project.structure.last.edited": "Dependencies",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ScreenRecorder.SavePath&quot;: &quot;C:\\Users\\samu_\\Desktop&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/samu_/Desktop&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -137,6 +137,9 @@
       <recent name="com.example.casopractico5" />
     </key>
     <key name="android.template.1204122780">
+      <recent name="com.example.casopractico5" />
+    </key>
+    <key name="android.template.-219649498">
       <recent name="com.example.casopractico5" />
     </key>
     <key name="android.template.-1788161922">
@@ -262,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706818345012</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Falta visualizar la foto seleccionada">
+      <created>1706821226981</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706821226981</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,7 +282,8 @@
     <MESSAGE value="Android caso práctico 8 terminado" />
     <MESSAGE value="Material Design first Touch" />
     <MESSAGE value="Practica añadir camara commit de seguridad" />
-    <option name="LAST_COMMIT_MESSAGE" value="Practica añadir camara commit de seguridad" />
+    <MESSAGE value="Falta visualizar la foto seleccionada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Falta visualizar la foto seleccionada" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -291,11 +302,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/database/DBOpenHelper.kt</url>
           <line>35</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/casopractico5/FotoActivity.kt</url>
-          <line>138</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
